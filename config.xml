@@ -54,19 +54,11 @@ PhoneGap Build Configuration
     <!-- https://github.com/napolitano/cordova-plugin-intent -->
     <plugin spec="https://github.com/napolitano/cordova-plugin-intent.git" source="git" />
     
+    <!-- https://www.npmjs.com/package/cordova-plugin-shortcuts-android -->
+    <plugin name="cordova-plugin-shortcuts-android" value="cordova-plugin-shortcuts-android" source="npm" />
+    
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
-            <activity android:name=".MainActivity">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN"/>
-
-                    <category android:name="android.intent.category.LAUNCHER"/>
-                </intent-filter>
-
-                <meta-data
-                    android:name="android.app.shortcuts"
-                    android:resource="@xml/shortcuts"/>
-            </activity>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"></action>
                 <action android:name="android.intent.action.SEND"/>
