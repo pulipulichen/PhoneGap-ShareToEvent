@@ -28,7 +28,7 @@ PhoneGap Build Configuration
     <preference name="phonegap-version" value="cli-8.0.0" />
     
     <!-- 防止太多權限 -->
-    <preference name="permissions" value="none" />
+    <preference name="permissions" value="com.android.launcher.permission.INSTALL_SHORTCUT" />
     
     <!-- 只保留最低的權限 -->
     <feature name="http://api.phonegap.com/1.0/network" />
