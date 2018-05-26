@@ -47,12 +47,13 @@ PhoneGap Build Configuration
     
     <!-- https://github.com/cordova-misc/cordova-webintent -->
     <plugin spec="https://github.com/cordova-misc/cordova-webintent.git" source="git" />
+    
     <platform name="android">
-        <config-file target="AndroidManifest.xml" parent="application/activity">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
                 <data android:mimeType="*/*" />
             </intent-filter>
         </config-file>
