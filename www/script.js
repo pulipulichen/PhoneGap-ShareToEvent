@@ -27,6 +27,7 @@ ready = function () {
                 }
         );
         */
+       /*
        window.plugins.webintent.sendBroadcast({
             action: 'com.dummybroadcast.action.triggerthing',
             extras: {option: true}
@@ -35,6 +36,7 @@ ready = function () {
         }, function (a) {
             alert("sendBroadcast b: " + a);
         });
+        */
         
         window.plugins.webintent.onNewIntent(function (uri) {
             if (uri !== '') {
@@ -54,6 +56,24 @@ ready = function () {
                 
                 alert("getUri: " + uri);
             }
+        });
+        
+        window.plugins.webintent.hasExtra(WebIntent.EXTRA_TEXT,
+                function (has) {
+                    alert("hasExtra a: " + has);
+                    // `has` is true iff app invoked with specified extra
+                }, function (b) {
+                    alert("hasExtra b: " + b);
+            // `hasExtra` check failed
+        });
+        
+        window.plugins.webintent.getExtra(WebIntent.EXTRA_TEXT,
+                function (url) {
+                    alert("getExtra a: " + url);
+                    // `has` is true iff app invoked with specified extra
+                }, function (b) {
+                    alert("getExtra b: " + b);
+            // `hasExtra` check failed
         });
         
     } catch (e) {
