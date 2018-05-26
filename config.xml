@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- 
-  PhoneGap Build Configuration
-  -->
+PhoneGap Build Configuration
+-->
 
 <!-- Configuration Start: Please customize following configuration -->
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="pgb-share-utils.pulipuli.info" version="1.0.0">
@@ -47,5 +47,13 @@
     
     <!-- https://github.com/cordova-misc/cordova-webintent -->
     <plugin spec="https://github.com/cordova-misc/cordova-webintent.git" source="git" />
-    
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="application/activity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </config-file>
+    </platform>
 </widget>
