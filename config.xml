@@ -56,7 +56,9 @@ PhoneGap Build Configuration
     <plugin spec="https://github.com/napolitano/cordova-plugin-intent.git" source="git" />
     
     <!-- https://www.npmjs.com/package/cordova-plugin-shortcut -->
-    <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" />
+    <!-- <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" /> -->
+    <plugin name="cordova-plugin-shortcuts-android" source="npm" />
+    
     
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
