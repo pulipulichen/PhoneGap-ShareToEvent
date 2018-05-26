@@ -26,7 +26,6 @@ PhoneGap Build Configuration
     <!-- https://build.phonegap.com/current-support -->
     <!-- <preference name="phonegap-version" value="cli-6.5.0" /> -->
     <preference name="phonegap-version" value="cli-8.0.0" />
-    <preference name="android-targetSdkVersion" value="25"/>
     
     <!-- 防止太多權限 -->
     <preference name="permissions" value="com.android.launcher.permission.INSTALL_SHORTCUT" />
@@ -56,16 +55,20 @@ PhoneGap Build Configuration
     <plugin spec="https://github.com/napolitano/cordova-plugin-intent.git" source="git" />
     
     <!-- https://www.npmjs.com/package/cordova-plugin-shortcut -->
-    <!-- <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" /> -->
-    <plugin name="cordova-plugin-shortcuts-android" source="npm" />
+    <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" />
     
+    <!-- https://www.npmjs.com/package/cordova-plugin-permission -->
+    <plugin name="cordova-plugin-permission" source="npm" />
     
     <platform name="android">
-        <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
-            <uses-permission
-                android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-            <uses-permission
-                android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
         </config-file>
     </platform>
 </widget>
