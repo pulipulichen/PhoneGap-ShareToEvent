@@ -39,5 +39,7 @@
     <plugin name="cordova-plugin-file" version="5.0.0" />
     <plugin name="cordova-plugin-x-socialsharing" source="npm" /> 
     -->
-    <plugin name="com.borismus.webintent" spec="3.0.0" source="pgb" />
+    
+    <!-- https://build.phonegap.com/plugins/1917 -->
+    <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" source=""npm />
 </widget>
