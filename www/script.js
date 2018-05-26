@@ -13,17 +13,18 @@ ready = function () {
          }
          );
          */
+        alert(1);
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
             url: 'geo:0,0?q='
         },
                 function () {
-                    alert("work")
+                    alert("work");
                 },
                 function () {
                     alert('Failed to open URL via Android Intent')
-                };
-                );
+                }
+        );
     } catch (e) {
         alert("fail: " + e);
     }
