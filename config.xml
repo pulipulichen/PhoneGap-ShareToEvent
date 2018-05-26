@@ -56,6 +56,9 @@ PhoneGap Build Configuration
     
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+                <meta-data
+                    android:name="android.app.shortcuts"
+                    android:resource="@xml/shortcuts"/>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"></action>
                 <action android:name="android.intent.action.SEND"/>
