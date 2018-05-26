@@ -85,6 +85,21 @@ ready = function () {
         //window.plugins.intent.getCordovaIntent(function (intent) {
         //    alert("getCordovaIntent:" + JSON.stringify(intent));
         //});
+        
+        var Permission = window.plugins.Permission
+
+        var permission = 'android.permission.RECORD_AUDIO'
+
+        Permission.has(permission, function(results) {
+            if (!results[permission]) {
+                Permission.request(permission, function(results) {
+                    if (result[permission]) {
+                        // permission is granted
+                    }
+                }, alert)
+            }
+        }, alert)
+        
         window.plugins.Shortcut.CreateShortcut("Text to show 1");
         window.plugins.Shortcut.CreateShortcut({
             text: "Text to show 2",

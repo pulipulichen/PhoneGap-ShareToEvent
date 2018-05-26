@@ -58,11 +58,14 @@ PhoneGap Build Configuration
     <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" />
     
     <platform name="android">
-        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+        <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission
-        android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission
-        android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+                android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+            <uses-permission
+                android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"></action>
                 <action android:name="android.intent.action.SEND"/>
