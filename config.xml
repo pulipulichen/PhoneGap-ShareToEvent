@@ -54,9 +54,11 @@ PhoneGap Build Configuration
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:host="blog.pulipuli.info" android:scheme="http"></data>
             </intent-filter>
         </config-file>
     </platform>
