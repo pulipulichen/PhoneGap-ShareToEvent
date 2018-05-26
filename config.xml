@@ -26,7 +26,7 @@ PhoneGap Build Configuration
     <!-- https://build.phonegap.com/current-support -->
     <!-- <preference name="phonegap-version" value="cli-6.5.0" /> -->
     <preference name="phonegap-version" value="cli-8.0.0" />
-    <preference name="android-targetSdkVersion" value="23"/>
+    <preference name="android-targetSdkVersion" value="25"/>
     
     <!-- 防止太多權限 -->
     <preference name="permissions" value="com.android.launcher.permission.INSTALL_SHORTCUT" />

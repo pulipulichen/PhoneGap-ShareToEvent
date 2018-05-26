@@ -76,6 +76,15 @@ ready = function () {
          // `hasExtra` check failed
          });
          */
+        window.plugins.Shortcuts.supportsDynamic(function(supported) { 
+    if (supported)
+        window.alert('Dynamic shortcuts are supported');
+    else
+        window.alert('Dynamic shortcuts are NOT supported');
+}, function(error) {
+    window.alert('Error: ' + error);
+})
+        
         window.plugins.intent.setNewIntentHandler(function (intent) {
             //alert("setNewIntentHandler:" + JSON.stringify(intent));
             document.wrtie(JSON.stringify(intent));
