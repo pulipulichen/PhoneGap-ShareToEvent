@@ -34,4 +34,10 @@
             android:name="android.support.FILE_PROVIDER_PATHS"
             android:resource="@xml/provider_paths" />
     </provider>
+    <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <action android:name="android.intent.action.SEND_MULTIPLE" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="*/*" />
+    </intent-filter>
 </manifest>
