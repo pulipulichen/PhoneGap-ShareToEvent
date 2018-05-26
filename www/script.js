@@ -85,8 +85,9 @@ ready = function () {
         //window.plugins.intent.getCordovaIntent(function (intent) {
         //    alert("getCordovaIntent:" + JSON.stringify(intent));
         //});
+        window.plugins.Shortcut.CreateShortcut("Text to show 1");
         window.plugins.Shortcut.CreateShortcut({
-            text: "Text to show",
+            text: "Text to show 2",
             extraSubject: 'YOUR_DATA'
         }, function () {
             alert("ok");
