@@ -41,5 +41,6 @@
     -->
     
     <!-- https://build.phonegap.com/plugins/1917 -->
-    <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" source="npm" />
+    <!-- <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" source="npm" /> -->
+    <plugin name="cordova-plugin-webintent2" source="npm" /> 
 </widget>
