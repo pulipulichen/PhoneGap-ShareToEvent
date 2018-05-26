@@ -39,6 +39,5 @@
     <plugin name="cordova-plugin-file" version="5.0.0" />
     <plugin name="cordova-plugin-x-socialsharing" source="npm" /> 
     -->
-    <plugin name="com.virtualartifacts.webintent" spec="1.0.0" source="pgb" />
-    <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" />
+    <plugin name="com.borismus.webintent" spec="3.0.0" source="pgb" />
 </widget>
