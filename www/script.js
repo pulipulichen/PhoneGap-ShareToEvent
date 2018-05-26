@@ -37,7 +37,7 @@ ready = function () {
             alert("sendBroadcast b: " + a);
         });
         */
-        
+        /*
         window.plugins.webintent.onNewIntent(function (uri) {
             if (uri !== '') {
                 alert("onNewIntent: " + uri);
@@ -75,7 +75,14 @@ ready = function () {
                     alert("getExtra b: " + b);
             // `hasExtra` check failed
         });
+        */
+        window.plugins.intent.setNewIntentHandler(function (intent) {
+            alert("setNewIntentHandler:" + JSON.stringify(intent));
+        });
         
+        window.plugins.intent.getCordovaIntent(function (intent) {
+            alert("getCordovaIntent:" + JSON.stringify(intent));
+        });
     } catch (e) {
         alert("fail: " + e);
     }
