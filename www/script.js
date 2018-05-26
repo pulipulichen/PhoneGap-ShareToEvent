@@ -13,7 +13,7 @@ ready = function () {
          }
          );
          */
-        alert(1);
+        //alert(1);
         /*
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
@@ -30,8 +30,10 @@ ready = function () {
        window.plugins.webintent.sendBroadcast({
             action: 'com.dummybroadcast.action.triggerthing',
             extras: {option: true}
-        }, function () {
-        }, function () {
+        }, function (a) {
+            alert("sendBroadcast a: " + a);
+        }, function (a) {
+            alert("sendBroadcast b: " + a);
         });
         
         window.plugins.webintent.onNewIntent(function (uri) {
