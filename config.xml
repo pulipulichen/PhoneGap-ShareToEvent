@@ -43,5 +43,6 @@
     <!-- https://build.phonegap.com/plugins/1917 -->
     <!-- <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" source="npm" /> -->
     <!-- <plugin name="cordova-plugin-android-support-v4" source="npm" /> -->
-    <plugin spec="https://github.com/okwei2000/webintent.git" source="git" />
+    <!-- <plugin name="cordova-plugin-webintent2" source="npm" /> -->
+    <plugin spec="https://github.com/cordova-misc/cordova-webintent.git" source="git" />
 </widget>
