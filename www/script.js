@@ -28,9 +28,11 @@ ready = function () {
                 //alert("setNewIntentHandler:" + JSON.stringify(intent));
                 //document.write(JSON.stringify(intent));
                 intent_handler(intent);
+                
             }
             catch (e) {
                 alert(e);
+                navigator.app.exitApp();
             }
         }, function (e) {
             alert("setNewIntentHandler error: " + e);
