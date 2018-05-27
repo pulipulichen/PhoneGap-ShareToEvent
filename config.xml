@@ -9,7 +9,7 @@ PhoneGap Build Configuration
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="pgb-share-utils.pulipuli.info" version="1.0.0">
     
-    <name>ShareToEvent</name>
+    <name>Share To Event</name>
     <description>
         Android APP for creating a event via sharing.
     </description>
