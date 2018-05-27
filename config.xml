@@ -60,7 +60,10 @@ PhoneGap Build Configuration
     <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" />
     
     <!-- https://www.npmjs.com/package/cordova-plugin-permission -->
-    <plugin name="cordova-plugin-permission" source="npm" />
+    <!-- <plugin name="cordova-plugin-permission" source="npm" /> -->
+    
+    <!-- https://github.com/NeoLSN/cordova-plugin-android-permissions -->
+    <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
     
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
