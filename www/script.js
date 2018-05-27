@@ -49,12 +49,14 @@ intent_handler = function (intent) {
             && typeof (_calendar_extras.description) === "undefined") {
         var _title = _calendar_extras.title.trim();
         var _last_space = _title.lastIndexOf(" ");
-        var _last_segment = _title.substring(_last_space + 1, _title.length).trim();
-        if (_last_segment.substr(0, 7) === "http://"
-                || _last_segment.substr(0, 8) === "https://") {
-            // 是feedly模式
-            _calendar_extras.title = _title.substr(0, _last_space);
-            _calendar_extras.description = _last_segment;
+        if (_last_space > -1) {
+            var _last_segment = _title.substring(_last_space + 1, _title.length).trim();
+            if (_last_segment.substr(0, 7) === "http://"
+                    || _last_segment.substr(0, 8) === "https://") {
+                // 是feedly模式
+                _calendar_extras.title = _title.substr(0, _last_space);
+                _calendar_extras.description = _last_segment;
+            }
         }
     }
     
