@@ -52,7 +52,7 @@ ready = function () {
          alert("Error: " + e);
          })
          */
-
+        alert("0941");
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
             uri: "content://com.android.calendar/events/uri",
