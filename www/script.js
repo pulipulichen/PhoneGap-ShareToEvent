@@ -55,10 +55,11 @@ ready = function () {
 
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
+            uri: "content://com.android.calendar/events",
             type: "vnd.android.cursor.item/event"
         },
                 function () {
-                    alert("ok");
+                    navigator.app.exitApp();
                 },
                 function () {
                     alert('Failed to open URL via Android Intent');
