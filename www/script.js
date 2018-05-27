@@ -54,7 +54,8 @@ ready = function () {
          */
 
         window.plugins.webintent.startActivity({
-            action: window.plugins.intent.ACTION_VIEW,
+            action: window.plugins.webintent.ACTION_VIEW,
+            url: "content://calendar/calendars",
             type: "vnd.android.cursor.item/event"
         },
                 function () {
