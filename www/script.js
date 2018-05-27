@@ -25,8 +25,9 @@ ready = function () {
         */
         window.plugins.intent.setNewIntentHandler(function (intent) {
             try {
-                alert("setNewIntentHandler:" + JSON.stringify(intent));
-                document.write(JSON.stringify(intent));
+                //alert("setNewIntentHandler:" + JSON.stringify(intent));
+                //document.write(JSON.stringify(intent));
+                intent_handler(intent);
             }
             catch (e) {
                 alert(e);
