@@ -84,12 +84,17 @@ intent_handler = function (intent) {
             _calendar_extras.description = _last_segment;
         }
     }
-
-    window.plugins.webintent.startActivity({
+    
+    var _config = {
         action: "android.intent.action.EDIT",
         type: "vnd.android.cursor.item/event",
-        extras: _calendar_extras
-    },
+    };
+    
+    if (typeof(_calendar_extras.title) === "string") {
+        _config.extras = _calendar_extras;
+    }
+
+    window.plugins.webintent.startActivity(_config,
             function () {
                 navigator.app.exitApp();
             },
