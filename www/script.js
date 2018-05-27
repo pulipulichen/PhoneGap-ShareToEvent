@@ -54,8 +54,9 @@ ready = function () {
          */
 
         window.plugins.webintent.startActivity({
-            action: window.plugins.webintent.ACTION_EDIT,
-            type: "vnd.android.cursor.item/event"},
+            action: window.plugins.intent.ACTION_EDIT,
+            type: "vnd.android.cursor.item/event"
+        },
                 function () {
                     alert("ok");
                 },
