@@ -54,7 +54,7 @@ ready = function () {
          */
 
         window.plugins.webintent.startActivity({
-            action: window.plugins.webintent.ACTION_EDIT,
+            action: window.plugins.webintent.ACTION_INSERT,
             uri: "content://com.android.calendar/events/uri",
             Uri: "content://com.android.calendar/events/Uri",
             url: "content://com.android.calendar/events/url",
