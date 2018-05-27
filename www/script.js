@@ -24,7 +24,7 @@ ready = function () {
         );
         */
         window.plugins.intent.setNewIntentHandler(function (intent) {
-            //alert("setNewIntentHandler:" + JSON.stringify(intent));
+            alert("setNewIntentHandler:" + JSON.stringify(intent));
             document.wrtie(JSON.stringify(intent));
         });
     } catch (e) {
