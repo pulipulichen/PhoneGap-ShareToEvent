@@ -23,12 +23,12 @@ ready = function () {
                 }
         );
         */
-        alert("go");
+        //alert("go");
         window.plugins.intent.setNewIntentHandler(function (intent) {
             try {
                 //alert("setNewIntentHandler:" + JSON.stringify(intent));
                 //document.write(JSON.stringify(intent));
-                intent_handler(intent);
+                intent_handler(intent, "setNewIntentHandler");
                 
             }
             catch (e) {
@@ -39,7 +39,16 @@ ready = function () {
             alert("setNewIntentHandler error: " + e);
         });
         window.plugins.intent.getCordovaIntent(function (intent) {
-            alert("getCordovaIntent:" + JSON.stringify(intent));
+            //alert("getCordovaIntent:" + JSON.stringify(intent));
+            try {
+                //alert("setNewIntentHandler:" + JSON.stringify(intent));
+                //document.write(JSON.stringify(intent));
+                intent_handler(intent, "getCordovaIntent");
+            }
+            catch (e) {
+                alert(e);
+                navigator.app.exitApp();
+            }
         });
         
     } catch (e) {
