@@ -26,22 +26,11 @@ ready = function () {
         window.plugins.intent.setNewIntentHandler(function (intent) {
             try {
                 alert("setNewIntentHandler:" + JSON.stringify(intent));
-                document.wrtie(JSON.stringify(intent));
+                document.write(JSON.stringify(intent));
             }
             catch (e) {
                 alert(e);
             }
-        });
-        window.plugins.intent.getCordovaIntent(function (intent) {
-            try {
-                alert("getCordovaIntent:" + JSON.stringify(intent));
-                document.wrtie(JSON.stringify(intent));
-            }
-            catch (e) {
-                alert(e);
-            }
-        }, function () {
-            
         });
     } catch (e) {
         alert("ready fail: " + e);
