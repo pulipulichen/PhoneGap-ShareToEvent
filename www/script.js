@@ -24,6 +24,7 @@ ready = function () {
         );
         */
         //alert("go");
+        /*
         window.plugins.intent.setNewIntentHandler(function (intent) {
             try {
                 //alert("setNewIntentHandler:" + JSON.stringify(intent));
@@ -38,12 +39,14 @@ ready = function () {
         }, function (e) {
             alert("setNewIntentHandler error: " + e);
         });
+        */
+        
         window.plugins.intent.getCordovaIntent(function (intent) {
             //alert("getCordovaIntent:" + JSON.stringify(intent));
             try {
                 //alert("setNewIntentHandler:" + JSON.stringify(intent));
                 //document.write(JSON.stringify(intent));
-                intent_handler(intent, "getCordovaIntent");
+                intent_handler(intent);
             }
             catch (e) {
                 alert(e);
@@ -56,7 +59,7 @@ ready = function () {
     }
 };
 
-intent_handler = function (intent, invoker) {
+intent_handler = function (intent) {
 
     if (intent_handler_timer !== undefined) {
         clearTimeout(intent_handler_timer);
