@@ -23,6 +23,7 @@ ready = function () {
                 }
         );
         */
+        alert("go");
         window.plugins.intent.setNewIntentHandler(function (intent) {
             try {
                 //alert("setNewIntentHandler:" + JSON.stringify(intent));
@@ -37,7 +38,9 @@ ready = function () {
         }, function (e) {
             alert("setNewIntentHandler error: " + e);
         });
-        window.plugins.intent.getCordovaIntent(function () {});
+        window.plugins.intent.getCordovaIntent(function (intent) {
+            alert("getCordovaIntent:" + JSON.stringify(intent));
+        });
         
     } catch (e) {
         alert("ready fail: " + e);
