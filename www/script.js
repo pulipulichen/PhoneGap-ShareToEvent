@@ -32,7 +32,11 @@ ready = function () {
             catch (e) {
                 alert(e);
             }
+        }, function (e) {
+            alert("setNewIntentHandler error: " + e);
         });
+        window.plugins.intent.getCordovaIntent(function () {});
+        
     } catch (e) {
         alert("ready fail: " + e);
     }
