@@ -64,7 +64,7 @@ PhoneGap Build Configuration
     <!-- <plugin name="cordova-plugin-permission" source="npm" /> -->
     
     <!-- https://github.com/katzer/cordova-plugin-background-mode -->
-    <!-- <plugin spec="https://github.com/katzer/cordova-plugin-background-mode.git" source="git" /> -->
+    <plugin spec="https://github.com/katzer/cordova-plugin-background-mode.git" source="git" />
     
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">

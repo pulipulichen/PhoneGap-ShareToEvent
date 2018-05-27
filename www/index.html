@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body style="background-color:transparent !important;">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/ShortcutPlugin.js"></script>
-        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="script.js"></script>
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
         <!-- <script type="text/javascript" src="http://pc.pulipuli.info/public/script.js"></script> -->
         <script type="text/javascript">
             document.addEventListener("deviceready", function(){
-                //cordova.plugins.backgroundMode.enable();
+                cordova.plugins.backgroundMode.enable();
                 ready();
             });
         </script>
