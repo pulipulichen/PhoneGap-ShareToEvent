@@ -1,23 +1,15 @@
 ready = function () {
     try {
-         
-        
-        /*
         window.plugins.intent.setNewIntentHandler(function (intent) {}, function (e) {});
 
         window.plugins.intent.getCordovaIntent(function (intent) {
-            //alert("getCordovaIntent:" + JSON.stringify(intent));
             try {
-                //alert("setNewIntentHandler:" + JSON.stringify(intent));
-                //document.write(JSON.stringify(intent));
                 intent_handler(intent);
             } catch (e) {
                 alert(e);
                 navigator.app.exitApp();
             }
         });
-        */
-       _handler();
 
     } catch (e) {
         alert("ready fail: " + e);
