@@ -49,7 +49,7 @@ PhoneGap Build Configuration
     <!-- <plugin name="cordova-plugin-webintent2" source="npm" /> -->
     
     <!-- https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview -->
-    <plugin spec="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git" source="git" />
+    <!-- <plugin spec="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git" source="git" /> -->
     
     <!-- https://github.com/cordova-misc/cordova-webintent -->
     <plugin spec="https://github.com/cordova-misc/cordova-webintent.git" source="git" />
