@@ -66,6 +66,9 @@ PhoneGap Build Configuration
     <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
     
     <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file> 
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"></action>
