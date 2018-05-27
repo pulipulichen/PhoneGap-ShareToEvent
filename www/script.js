@@ -54,9 +54,16 @@ ready = function () {
          */
 
         window.plugins.webintent.startActivity({
-            action: window.plugins.webintent.ACTION_VIEW,
-            uri: "content://com.android.calendar/events",
-            type: "vnd.android.cursor.item/event"
+            action: window.plugins.webintent.ACTION_INSERT,
+            uri: "content://com.android.calendar/events/uri",
+            Uri: "content://com.android.calendar/events/Uri",
+            url: "content://com.android.calendar/events/url",
+            Url: "content://com.android.calendar/events/url",
+            type: "vnd.android.cursor.item/event",
+            extra: {
+                uri: "URI",
+                url: "URI"
+            }
         },
                 function () {
                     navigator.app.exitApp();
