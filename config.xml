@@ -49,16 +49,16 @@ PhoneGap Build Configuration
     <!-- <plugin name="cordova-plugin-webintent2" source="npm" /> -->
     
     <!-- https://github.com/cordova-misc/cordova-webintent -->
-    <!-- <plugin spec="https://github.com/cordova-misc/cordova-webintent.git" source="git" /> -->
+    <plugin spec="https://github.com/cordova-misc/cordova-webintent.git" source="git" />
     
     <!-- https://github.com/napolitano/cordova-plugin-intent -->
     <plugin spec="https://github.com/napolitano/cordova-plugin-intent.git" source="git" />
     
     <!-- https://www.npmjs.com/package/cordova-plugin-shortcut -->
-    <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" />
+    <!-- <plugin spec="https://github.com/jorgecis/ShortcutPlugin.git" source="git" /> -->
     
     <!-- https://www.npmjs.com/package/cordova-plugin-permission -->
-    <plugin name="cordova-plugin-permission" source="npm" />
+    <!-- <plugin name="cordova-plugin-permission" source="npm" /> -->
     
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
