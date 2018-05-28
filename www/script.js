@@ -77,6 +77,38 @@ intent_handler = function (intent) {
         _calendar_extras.description = _desc;
     }
     
+    if (typeof(_calendar_extras.title) === "string" 
+            && typeof (_calendar_extras.description) === "undefined"
+            && _calendar_extras.title.indexOf(" ") === -1
+            && (_calendar_extras.title.startsWith("http://") || _calendar_extras.title.startsWith("https://"))) {
+        var _link = _calendar_extras.title;
+        $.get(_link, function (_html) {
+            if (_html.indexOf("<title>") === -1) {
+                _calendar_extras.title = _html;
+                _calendar_extras.description = _link;
+            }
+            else {
+                try {
+                    var _html_obj = $(_html);
+                    var _title = _html_obj.find("title").text();
+                    
+                    _calendar_extras.title = _title;
+                    _calendar_extras.description = _link;
+                } catch (e) {
+                    _calendar_extras.title = _html;
+                    _calendar_extras.description = _link;
+                }
+            }
+            _start_activity(_calendar_extras);
+        });
+    }
+    else {
+        _start_activity(_calendar_extras);
+    }
+};
+
+var _start_activity = function (_calendar_extras) {
+    
     var _config = {
         action: "android.intent.action.EDIT",
         type: "vnd.android.cursor.item/event",
