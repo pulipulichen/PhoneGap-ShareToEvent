@@ -77,32 +77,38 @@ intent_handler = function (intent) {
         _calendar_extras.description = _desc;
     }
     
+    //alert(JSON.stringify(_calendar_extras));
+    
     if (typeof(_calendar_extras.title) === "string" 
             && typeof (_calendar_extras.description) === "undefined"
             && _calendar_extras.title.indexOf(" ") === -1
             && (_calendar_extras.title.startsWith("http://") || _calendar_extras.title.startsWith("https://"))) {
         var _link = _calendar_extras.title;
+        //alert(_link);
         $.get(_link, function (_html) {
             if (_html === undefined) {
-                
+                //alert(1);
             }
             else if (_html.indexOf("<title>") === -1) {
                 if (_html.trim() !== "") {
                     _calendar_extras.title = _html;
                     _calendar_extras.description = _link;
                 }
+                //alert(2);
             }
             else {
                 try {
-                    var _html_obj = $(_html);
-                    var _title = _html_obj.find("title").text();
                     
-                    _calendar_extras.title = _title;
+                    var _title = _html.substring(_html.indexOf("<title>") + 7, _html.indexOf("</title>")).trim();
+                    //alert([_title, _html_obj.find("title").length, _html_obj.find("title").html()]);
+                    
+                    _calendar_extras.title = decodeURIComponent(_title);
                     _calendar_extras.description = _link;
                 } catch (e) {
                     _calendar_extras.title = _html;
                     _calendar_extras.description = _link;
                 }
+                //alert(_html);
             }
             _start_activity(_calendar_extras);
         });
