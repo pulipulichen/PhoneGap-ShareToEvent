@@ -83,7 +83,10 @@ intent_handler = function (intent) {
             && (_calendar_extras.title.startsWith("http://") || _calendar_extras.title.startsWith("https://"))) {
         var _link = _calendar_extras.title;
         $.get(_link, function (_html) {
-            if (_html.indexOf("<title>") === -1) {
+            if (_html === undefined) {
+                
+            }
+            else if (_html.indexOf("<title>") === -1) {
                 if (_html.trim() !== "") {
                     _calendar_extras.title = _html;
                     _calendar_extras.description = _link;
