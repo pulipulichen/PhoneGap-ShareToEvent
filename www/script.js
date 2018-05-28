@@ -84,8 +84,10 @@ intent_handler = function (intent) {
         var _link = _calendar_extras.title;
         $.get(_link, function (_html) {
             if (_html.indexOf("<title>") === -1) {
-                _calendar_extras.title = _html;
-                _calendar_extras.description = _link;
+                if (_html.trim() !== "") {
+                    _calendar_extras.title = _html;
+                    _calendar_extras.description = _link;
+                }
             }
             else {
                 try {
