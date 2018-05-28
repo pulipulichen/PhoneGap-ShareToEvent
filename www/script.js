@@ -60,6 +60,23 @@ intent_handler = function (intent) {
         }
     }
     
+    if (typeof (_calendar_extras.title) === "string"
+            && _calendar_extras.title.indexOf("\n") > 0) {
+        var  _desc = "";
+        if (typeof(_calendar_extras.description) === "string") {
+            _desc = "\n\n" + _calendar_extras.description;
+        }
+        
+        var _title = _calendar_extras.title;
+        var _title1 = _title.substr(0, _title.indexOf("\n")).trim();
+        var _title2 = _title.substring(_title.indexOf("\n")+1, _title.length).trim();
+        
+        _calendar_extras.title = _title1;
+        _desc = _title2 + _desc;
+        
+        _calendar_extras.description = _desc;
+    }
+    
     var _config = {
         action: "android.intent.action.EDIT",
         type: "vnd.android.cursor.item/event",
