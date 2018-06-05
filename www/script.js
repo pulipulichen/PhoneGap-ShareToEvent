@@ -33,6 +33,15 @@ intent_handler = function (intent) {
         if (typeof (_extras["android.intent.extra.SUBJECT"]) === "string") {
             _calendar_extras.title = _extras["android.intent.extra.SUBJECT"];
         }
+        if (typeof (_extras["android.intent.extra.PROCESS_TEXT"]) === "string") {
+            if (typeof(_calendar_extras.title) === "undefined") {
+                _calendar_extras.title = "";
+            }
+            else {
+                _calendar_extras.title = _calendar_extras.title + " ";
+            }
+            _calendar_extras.title = _calendar_extras.title + _extras["android.intent.extra.PROCESS_TEXT"];
+        }
         if (typeof (_extras["android.intent.extra.TEXT"]) === "string") {
             _calendar_extras.description = _extras["android.intent.extra.TEXT"];
         }
@@ -62,6 +71,7 @@ intent_handler = function (intent) {
     
     if (typeof (_calendar_extras.title) === "string"
             && _calendar_extras.title.indexOf("\n") > 0) {
+        
         var  _desc = "";
         if (typeof(_calendar_extras.description) === "string") {
             _desc = "\n\n" + _calendar_extras.description;
