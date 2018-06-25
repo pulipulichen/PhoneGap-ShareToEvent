@@ -16,6 +16,10 @@ ready = function () {
     }
 };
 
+var FILTER_SUBJECT = [
+    "Text Scanner"
+];
+
 var FILTER_TEXT_PREFIX = [
     "固定\n延後\n移至收件匣\n移至...",
     "固定\n延後\n刪除\n移至..."
@@ -38,7 +42,18 @@ intent_handler = function (intent) {
         //alert(JSON.stringify(_extras));
         
         if (typeof (_extras["android.intent.extra.SUBJECT"]) === "string") {
-            _calendar_extras.title = _extras["android.intent.extra.SUBJECT"];
+            var _subject = _extras["android.intent.extra.SUBJECT"];
+            for (var _i = 0; _i < FILTER_SUBJECT.length; _i++) {
+                var _needle = FILTER_SUBJECT[_i];
+                if (_subject === _needle) {
+                    //_text = _text.substring(_needle.length, _text.length).trim();
+                    _subject = null;
+                    break;
+                }
+            }
+            if (null !== _subject) {
+                _calendar_extras.title = _subject;
+            }
         }
         if (typeof (_extras["android.intent.extra.PROCESS_TEXT"]) === "string") {
             if (typeof(_calendar_extras.title) === "undefined") {
@@ -56,6 +71,7 @@ intent_handler = function (intent) {
                 //alert(JSON.stringify([_text.substr(0, _needle.length), _needle]));
                 if (_text.substr(0, _needle.length) === _needle) {
                     _text = _text.substring(_needle.length, _text.length).trim();
+                    break;
                 }
             }
             //alert(_text);
