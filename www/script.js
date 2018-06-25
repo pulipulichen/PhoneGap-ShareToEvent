@@ -16,12 +16,13 @@ ready = function () {
     }
 };
 
-var BLOCK_TITLE = [
-    "固定"
+var FILTER_TEXT_PREFIX = [
+    "固定\n延後\n移至收件匣\n移至...",
+    "固定\n延後\n刪除\n移至..."
 ];
 
 intent_handler = function (intent) {
-
+    
     if (intent_handler_timer !== undefined) {
         clearTimeout(intent_handler_timer);
     }
@@ -34,6 +35,8 @@ intent_handler = function (intent) {
 
     if (typeof (intent.extras) === "object") {
         var _extras = intent.extras;
+        //alert(JSON.stringify(_extras));
+        
         if (typeof (_extras["android.intent.extra.SUBJECT"]) === "string") {
             _calendar_extras.title = _extras["android.intent.extra.SUBJECT"];
         }
@@ -47,7 +50,16 @@ intent_handler = function (intent) {
             _calendar_extras.title = _calendar_extras.title + _extras["android.intent.extra.PROCESS_TEXT"];
         }
         if (typeof (_extras["android.intent.extra.TEXT"]) === "string") {
-            _calendar_extras.description = _extras["android.intent.extra.TEXT"];
+            var _text = _extras["android.intent.extra.TEXT"];
+            for (var _i = 0; _i < FILTER_TEXT_PREFIX.length; _i++) {
+                var _needle = FILTER_TEXT_PREFIX[_i];
+                alert(JSON.stringify([_text.substr(0, _needle.length), _needle]));
+                if (_text.substr(0, _needle.length) === _needle) {
+                    _text = _text.substring(_needle.length, _text.length).trim();
+                }
+            }
+            alert(_text);
+            _calendar_extras.description = _text;
         }
     }
 
