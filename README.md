@@ -7,6 +7,7 @@ Android APP for creating a event via sharing.
     * https://build.phonegap.com/people/sign_in
 
 - Install: https://bit.ly/2IKsRrk
+    * https://build.phonegap.com/apps/3176725/download/android
 ![Install](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3176725/install/DNZBQy-QDMDQZAi-AzzK&chld=L|1&choe=UTF-8)
 
 
