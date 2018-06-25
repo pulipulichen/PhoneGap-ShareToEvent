@@ -16,6 +16,10 @@ ready = function () {
     }
 };
 
+var BLOCK_TITLE = [
+    "固定"
+];
+
 intent_handler = function (intent) {
 
     if (intent_handler_timer !== undefined) {
