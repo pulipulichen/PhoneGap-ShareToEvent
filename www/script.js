@@ -53,12 +53,12 @@ intent_handler = function (intent) {
             var _text = _extras["android.intent.extra.TEXT"];
             for (var _i = 0; _i < FILTER_TEXT_PREFIX.length; _i++) {
                 var _needle = FILTER_TEXT_PREFIX[_i];
-                alert(JSON.stringify([_text.substr(0, _needle.length), _needle]));
+                //alert(JSON.stringify([_text.substr(0, _needle.length), _needle]));
                 if (_text.substr(0, _needle.length) === _needle) {
                     _text = _text.substring(_needle.length, _text.length).trim();
                 }
             }
-            alert(_text);
+            //alert(_text);
             _calendar_extras.description = _text;
         }
     }
