@@ -1,11 +1,13 @@
 # PhoneGap-ShareToEvent
 Android APP for creating a event via sharing.
-用Android的分享功能，將選取文字或是任意文字資料分享到行事曆，建立行事曆事件。
+
+安裝分享建立事件ShareToEvent，Android就可以從任意選取文字或是從APP分享來建立行事曆事件。
 
 - GitHub: https://github.com/pulipulichen/PhoneGap-ShareToEvent
 - PhoneGap Build: https://build.phonegap.com/apps/3176725/builds
     * https://build.phonegap.com/apps/
     * https://build.phonegap.com/people/sign_in
+- Google Play: https://play.google.com/store/apps/details?id=pgb_share_to_event.pulipuli.info
 
 - Install: https://bit.ly/2IKsRrk
     * https://build.phonegap.com/apps/3176725/download/android
